@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.grisPrincipal {
+  color: #101823;
+}
+
+.rojoPrincipal {
+  color: #ff4654;
+}
+
+.sepia {
+  color: #382f27;
+}
+.blanco {
+  color: #ffffff;
+}
+.bg-grisPrincipal {
+  background-color: #101823;
+}
+
+.bg-rojoPrincipal {
+  background-color: #ff4654;
+}
+
+.bg-sepia {
+  background-color: #382f27;
+}
+.bg-blanco {
+  background-color: #ffffff;
+}
+.footer {
+  width: 100%;
+  height: 250px;
+}
+.header {
+  width: 100%;
+  height: 80px;
+}
