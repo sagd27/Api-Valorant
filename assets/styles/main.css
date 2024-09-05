@@ -18,6 +18,12 @@
   display: flex;
   font-size: 1.2rem;
   gap: 15px;
+  font-weight: bold;
+  width: 310px;
+  padding-top: 10px;
+  &:nth-child(2n) {
+    color: black;
+  }
 }
 .icontFoot a p {
   margin: 0px;
