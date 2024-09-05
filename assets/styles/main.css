@@ -83,14 +83,30 @@
   font-family: Valorant;
   color: #ff4654;
   justify-content: center;
-  margin: 7px 0;
+  margin: 2rem 0;
 }
 .custom-filtradoresWeapons{
   gap: 10px;
-  margin: 10px 2px;
+  margin: 2rem 1rem 5rem 1rem;
+}
+
+.customCardWeapons{
+  background-color: rgba(0, 0, 0, 0);
+  margin: 3rem 0;
+}
+.customCardWeapons .card{
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.customImgWeapons{
+  max-height: 6rem;
+  object-fit: contain;
 }
 @media (max-width: 575px) {
   .custom-filtradoresWeapons {
       flex-direction: column-reverse; /* Invierte el orden en pantallas pequeñas */
+  }
+  .customCardWeapons{
+    margin: 5rem 0;
   }
 }

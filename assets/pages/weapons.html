@@ -63,7 +63,7 @@
           </div>
         </nav>
       </header>
-      <main class="flex-grow-1 bg-image">
+      <main class="flex-grow-1 bg-image" id="appWeapons">
         <div class="tituloWeapons d-flex ">
           <h1>WEAPONS</h1>
         </div>
@@ -86,6 +86,16 @@
             </div>
           </div>
         </div>
+        <div class="container">
+          <div class="row justify-content-md-around gap-5">
+            <div v-for="elemento in elementos" class="col-12 col-sm-5 customCardWeapons">
+              <div class="card">
+                <a href="#"><img :src= "elemento.displayIcon" class="card-img-top customImgWeapons" :alt="elemento.displayIcon"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </main>
 
       <footer
@@ -121,5 +131,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../js/weapons.js"></script>
   </body>
 </html>
