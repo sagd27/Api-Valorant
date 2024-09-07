@@ -56,6 +56,10 @@ const app = createApp({
         );
       }
     },
+    limpiarStorage() {
+      localStorage.setItem("agentesFavoritos", JSON.stringify(""));
+      this.agentesFavoritos = [];
+    },
   },
   computed: {
     filtros() {
