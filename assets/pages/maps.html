@@ -63,7 +63,20 @@
           </div>
         </nav>
       </header>
-      <main class="flex-grow-1 bg-image"></main>
+      <main id="app" class="d-flex row flex-grow-1 bg-image">
+
+        <div id="mapsCard " class="d-flex flex-wrap p-5 gap-5 justify-content-center  " >
+        
+           <div v-for="map in maps" class="card gap bg-" style="width: 18rem;">
+            <img :src="map.splash" class="card-img-top tamaño " alt="...">
+          
+          </div>
+          </div>
+
+
+
+   
+      </main>
       <footer
         class="footer bg-rojoPrincipal d-flex flex-column justify-content-between"
       >
@@ -97,5 +110,12 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+         <!-- Conexion al script de maps -->
+         <script src="../js/maps.js" type="module"></script>
+    
+         <!-- Conexion al script de Vue -->
+         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+ 
   </body>
 </html>
