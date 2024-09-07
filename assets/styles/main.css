@@ -4,16 +4,13 @@
   margin: 0px;
 }
 @font-face {
-  font-family: 'Valorant';
+
+  font-family: "Valorant";
   src: url(../font/Valorant\ Font.ttf);
 }
-
-.font-valorant{
+.font-valorant {
   font-family: Valorant;
-
 }
-
-
 .textNav li a {
   text-decoration: none;
   font-size: 1.2rem;
