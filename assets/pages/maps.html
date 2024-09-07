@@ -86,7 +86,7 @@
                 <div v-for="map in mapsFavorites" class="card card-tamaño  text-light" >
                   <a :href="'./detailsMaps.html?uuid='+map.uuid"> <img :src="map.displayIcon" class="position-absolute fondo-map"></a>
                   <img :src="map.splash" class="card-img-top  img-oculta " alt="...">
-               <h5 class="text-card position-absolute fw-bold fs-4" > {{map.displayName}}</h5>
+               <h5 class="text-card position-absolute fw-bold fs-4 font-valorant" > {{map.displayName}}</h5>
               
                <div class="btn-fav position-absolute ">
                <button @click="eliminarFavorito(map)" class="btn ">
@@ -109,7 +109,7 @@
           </div>
         </div>
 
-        <div class="d-block text-center">
+        <div class="d-block text-center font-valorant">
           <h2 class="fw-bold fs-1 rojoPrincipal">MAPS</h2>
         </div>
 
@@ -120,8 +120,8 @@
           <div class="">
             <label for="customRange2" class="form-label">Example range</label>
             
-            <input v-model="regionSelection"  type="range" class="form-range " min="11" max="28" id="customRange2">
-            <p class="text-light fs-4">Max Number of Regions: <span class="fw-bold rojoPrincipal"> {{regionSelection}}</span></p>
+            <input v-model="regionSelection"  type="range" class="form-range  " min="11" max="28" id="customRange2">
+            <p class="text-light fs-4 font-valorant">Max Number of Regions: <span class="fw-bold rojoPrincipal"> {{regionSelection}}</span></p>
         </div>
         <div class="busqueda pt-4 ">
           <input
@@ -150,7 +150,7 @@
           <div v-for="map in maps" class="card card-tamaño  text-light" >
            <a :href="'./detailsMaps.html?uuid='+map.uuid"> <img :src="map.displayIcon" class="position-absolute fondo-map"></a>
            <img :src="map.splash" class="card-img-top  img-oculta " alt="...">
-          <h5 class="text-card position-absolute fw-bold fs-4" > {{map.displayName}}</h5>
+          <h5 class="text-card position-absolute fw-bold fs-4 font-valorant" > {{map.displayName}}</h5>
          
           <div class="btn-fav position-absolute ">
           <button @click="agregarFavorito(map)" class="btn ">
