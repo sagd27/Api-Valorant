@@ -72,8 +72,8 @@
                 <h3 class="align-self-center text-center text-light font-valorant">{{agents.displayName}}</h3>
                 <ul class="text-start text-light gap-2 d-flex flex-column list-unstyled">
                     <li><span>{{agents.description}}</span> </li>
-                    <li><span  class="fw-bold">Role:</span> {{agents.role ? agents.role.displayName : 'No role'}}</li>
-                    <li><span class="fw-bold">Abilities:</span>
+                    <li><span  class="fw-bold font-valorant">Role:</span> {{agents.role ? agents.role.displayName : 'No role'}}</li>
+                    <li><span class="fw-bold font-valorant">Abilities:</span>
                       <ul class="list-unstyled d-flex gap-2 flex-column">
                         <li v-for="(ability, index) in agents.abilities" :key="index">
                           <div 

@@ -65,7 +65,12 @@
         </nav>
       </header>
       <main id="app" class="flex-grow-1 bg-image">
-        <button class="btn btnFav" data-bs-toggle="modal" data-bs-target="#fav">
+        <button
+          v-if="agentesFavoritos.length > 0"
+          class="btn btnFav"
+          data-bs-toggle="modal"
+          data-bs-target="#fav"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -103,7 +108,9 @@
                   <a
                     class="text-decoration-none"
                     :href="'./detailsAgents.html?uuid='+agente.uuid"
-                    ><h6 class="blanco fw-bold">{{agente.displayName}}</h6></a
+                    ><h6 class="blanco fw-bold font-valorant">
+                      {{agente.displayName}}
+                    </h6></a
                   >
                   <div class="mt-auto d-flex justify-content-center pb-1">
                     <button
@@ -136,7 +143,7 @@
           </div>
         </div>
         <div class="d-block text-center">
-          <h2 class="fw-bold fs-1 rojoPrincipal">AGENTS</h2>
+          <h2 class="fw-bold fs-1 rojoPrincipal font-valorant">AGENTS</h2>
         </div>
 
         <div
@@ -155,7 +162,9 @@
               :value="rol"
               :id="rol"
             />
-            <label class="form-check-label blanco fw-bold" :for="rol"
+            <label
+              class="form-check-label blanco fw-bold font-valorant"
+              :for="rol"
               >{{rol}}</label
             >
           </div>
@@ -194,7 +203,9 @@
             <a
               class="text-decoration-none"
               :href="'./detailsAgents.html?uuid='+agente.uuid"
-              ><h6 class="blanco fw-bold">{{agente.displayName}}</h6></a
+              ><h6 class="blanco fw-bold font-valorant">
+                {{agente.displayName}}
+              </h6></a
             >
             <div class="mt-auto d-flex justify-content-center pb-1">
               <button
@@ -245,8 +256,7 @@
           ><a href="https://github.com/TI-Angel" target="_blank"
             ><img src="../media/gitIcon.png" alt="" />
             <p>TI-Angel</p></a
-         
-            >
+          >
         </div>
       </footer>
     </div>
