@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/maps.css">
   </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
@@ -63,7 +64,108 @@
           </div>
         </nav>
       </header>
-      <main class="flex-grow-1 bg-image"></main>
+      <main id="app" class="flex-grow-1 bg-image">
+  
+        <button class="btn btnFav" data-bs-toggle="modal" data-bs-target="#fav">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backpack3-fill" viewBox="0 0 16 16">
+            <path d="M5 10v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"/>
+            <path d="M6 2v.341a6 6 0 0 0-1.308.653l-.416-1.247a1 1 0 0 0-1.749-.284l-.77 1.027a1 1 0 0 0-.149.917l.803 2.407A6 6 0 0 0 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8c0-.771-.146-1.509-.41-2.186l.801-2.407a1 1 0 0 0-.148-.917l-.77-1.027a1 1 0 0 0-1.75.284l-.415 1.247A6 6 0 0 0 10 2.34V2a2 2 0 1 0-4 0m1 0a1 1 0 0 1 2 0v.083a6 6 0 0 0-2 0zm5.941 2.595a6 6 0 0 0-.8-.937l.531-1.595.77 1.027zM3.86 3.658a6 6 0 0 0-.8.937L2.557 3.09l.77-1.027zm.18 3.772a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.142 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.142M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </button>
+          
+     
+        <div class="modal overflow-auto" id="fav">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">FAVORITES</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div  id="mapsCard " class="d-flex flex-wrap p-5 gap-4 justify-content-center  " >
+        
+                <div v-for="map in mapsFavorites" class="card card-tamaño  text-light" >
+                  <a :href="'./detailsMaps.html?uuid='+map.uuid"> <img :src="map.displayIcon" class="position-absolute fondo-map"></a>
+                  <img :src="map.splash" class="card-img-top  img-oculta " alt="...">
+               <h5 class="text-card position-absolute fw-bold fs-4" > {{map.displayName}}</h5>
+              
+               <div class="btn-fav position-absolute ">
+               <button @click="eliminarFavorito(map)" class="btn ">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backpack3" viewBox="0 0 16 16">
+                 <path d="M4.04 7.43a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"/>
+                 <path d="M6 2.341V2a2 2 0 1 1 4 0v.341c.465.165.904.385 1.308.653l.416-1.247a1 1 0 0 1 1.748-.284l.77 1.027a1 1 0 0 1 .15.917l-.803 2.407C13.854 6.49 14 7.229 14 8v5.5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5V8c0-.771.146-1.509.41-2.186l-.802-2.407a1 1 0 0 1 .15-.917l.77-1.027a1 1 0 0 1 1.748.284l.416 1.247A6 6 0 0 1 6 2.34ZM7 2v.083a6 6 0 0 1 2 0V2a1 1 0 1 0-2 0m5.941 2.595.502-1.505-.77-1.027-.532 1.595q.447.427.8.937M3.86 3.658l-.532-1.595-.77 1.027.502 1.505q.352-.51.8-.937M8 3a5 5 0 0 0-5 5v5.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8a5 5 0 0 0-5-5"/>
+               </svg>
+     
+             </button>
+             </div>
+     
+               </div>
+               </div>
+              <div class="modal-footer">
+                <button class="btn btn-danger" @click="limpiarStorage()">
+                  Clean
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="Filtros-maps d-flex gap-5 align-items-center justify-content-around flex-wrap px-3 ">       
+         {{filterData}}
+
+          <div class="">
+            <label for="customRange2" class="form-label">Example range</label>
+            
+            <input v-model="regionSelection"  type="range" class="form-range " min="11" max="28" id="customRange2">
+            <p class="text-light fs-4">Max Number of Regions: <span class="fw-bold rojoPrincipal"> {{regionSelection}}</span></p>
+        </div>
+        <div class="busqueda pt-4 ">
+          <input
+            v-model="textSearch"
+            class="rounded-pill ps-2"
+            type="text"
+            name="busqueda"
+            id="busqueda"
+            placeholder="Search..."
+          />
+        </div>
+      </div>
+
+
+        <div  id="mapsCard " class="d-flex flex-wrap p-5 gap-4 justify-content-center  " >
+        
+          <div v-if="maps.length == 0">
+              <p class="text-center text-light fw-bold fs-1"> No matches found</p>
+              <img
+              class="col-10"
+              src="https://i.pinimg.com/originals/ff/ef/df/ffefdfc37c7c6af3f081c9ec527b3d2a.png"
+              alt=""
+            />
+          </div>
+           
+          <div v-for="map in maps" class="card card-tamaño  text-light" >
+           <a :href="'./detailsMaps.html?uuid='+map.uuid"> <img :src="map.displayIcon" class="position-absolute fondo-map"></a>
+           <img :src="map.splash" class="card-img-top  img-oculta " alt="...">
+          <h5 class="text-card position-absolute fw-bold fs-4" > {{map.displayName}}</h5>
+         
+          <div class="btn-fav position-absolute ">
+          <button @click="agregarFavorito(map)" class="btn ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backpack3" viewBox="0 0 16 16">
+            <path d="M4.04 7.43a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"/>
+            <path d="M6 2.341V2a2 2 0 1 1 4 0v.341c.465.165.904.385 1.308.653l.416-1.247a1 1 0 0 1 1.748-.284l.77 1.027a1 1 0 0 1 .15.917l-.803 2.407C13.854 6.49 14 7.229 14 8v5.5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5V8c0-.771.146-1.509.41-2.186l-.802-2.407a1 1 0 0 1 .15-.917l.77-1.027a1 1 0 0 1 1.748.284l.416 1.247A6 6 0 0 1 6 2.34ZM7 2v.083a6 6 0 0 1 2 0V2a1 1 0 1 0-2 0m5.941 2.595.502-1.505-.77-1.027-.532 1.595q.447.427.8.937M3.86 3.658l-.532-1.595-.77 1.027.502 1.505q.352-.51.8-.937M8 3a5 5 0 0 0-5 5v5.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8a5 5 0 0 0-5-5"/>
+          </svg>
+
+        </button>
+        </div>
+
+          </div>
+          </div>
+
+
+
+   
+      </main>
       <footer
         class="footer bg-rojoPrincipal d-flex flex-column justify-content-between"
       >
@@ -97,5 +199,12 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+         <!-- Conexion al script de maps -->
+         <script src="../js/maps.js" type="module"></script>
+    
+         <!-- Conexion al script de Vue -->
+         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+ 
   </body>
 </html>
