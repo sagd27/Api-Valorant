@@ -173,6 +173,17 @@
         </div>
 
         <div class="d-flex flex-wrap justify-content-center gap-5 py-5 px-5">
+          <div
+            v-if="agentes.length == 0"
+            class="mensajeAmigable d-block text-center"
+          >
+            <p class="fs-1 fw-bold text-light pt-5">No matches found</p>
+            <img
+              class="col-10"
+              src="https://i.pinimg.com/originals/ff/ef/df/ffefdfc37c7c6af3f081c9ec527b3d2a.png"
+              alt=""
+            />
+          </div>
           <div v-for="agente in agentes" class="tarjeta d-flex flex-column">
             <img
               class="position-absolute fondoBlanco"
