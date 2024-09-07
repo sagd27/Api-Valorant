@@ -3,6 +3,14 @@
   padding: 0px;
   margin: 0px;
 }
+@font-face {
+
+  font-family: "Valorant";
+  src: url(../font/Valorant\ Font.ttf);
+}
+.font-valorant {
+  font-family: Valorant;
+}
 .textNav li a {
   text-decoration: none;
   font-size: 1.2rem;
@@ -73,84 +81,4 @@
   width: 100%;
   height: 5%;
 }
-/* Fuente de valorant */
-@font-face {
-  font-family: 'Valorant';
-  src: url(../font/Valorant\ Font.ttf);
-}
-/* Estilo de la pagina weapoons */
-.tituloWeapons{
-  font-family: Valorant;
-  color: #ff4654;
-  justify-content: center;
-  margin: 2rem 0;
-}
-.custom-filtradoresWeapons{
-  gap: 10px;
-  margin: 2rem 1rem 5rem 1rem;
-}
 
-.customCardWeapons{
-  background-color: rgba(0, 0, 0, 0);
-  margin: 3rem 0;
-  border-radius: 10px;
-  transition: 500ms;
-  &:hover .customImgWeapons{
-    opacity: 0;
-
-  }
-  &:hover .customImgWeapons-hover{
-    opacity: 1;
-    scale: 1.04;
-    transform: rotate(0.03turn) ;
-  }
-  &:hover {
-    background-color: #ff4654;
-    transform: rotate(-0.03turn) ;
-  }
-  &:hover .nombreArma{
-    opacity: 1;
-  }
-
-}
-.customCardWeapons .card{
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-}
-.customImgWeapons{
-  max-height: 6rem;
-  object-fit: contain;
-  transition: opacity 0.3s ease;
-  transition: 500ms;
-}
-.customImgWeapons-hover{
-  opacity: 0;
-  translate: -450px 10px;
-  transition: opacity 0.3s ease;
-  transition: 500ms;
-  
-}
-.nombreArma{
-  text-decoration: none;
-  color: #ffffff;
-  font-family: Valorant;
-  font-size: 35px;
-  opacity: 0;
-}
-.btnDetail{
-  text-decoration: none;
-}
-
-/* @media (hover: hover){
-  .btnDetail:hover{
-    background-color: #ff4654;
-  }
-} */
-@media (max-width: 575px) {
-  .custom-filtradoresWeapons {
-      flex-direction: column-reverse; /* Invierte el orden en pantallas pequeñas */
-  }
-  .customCardWeapons{
-    margin: 5rem 0;
-  }
-}

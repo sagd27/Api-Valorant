@@ -16,6 +16,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/weapons.css" />
+
+
   </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
@@ -73,8 +76,8 @@
             <div class="selectWeapons col-11 col-sm-4">
               {{filtros}}
               <select v-model="categoriaSeleccionadas" class="form-select" aria-label="Default select example">
-                <option selected>Category</option>
-                <option v-for="categoria in categorias" :value="categoria">{{categoria}}</option>
+                <option class="font-valorant">Category</option>
+                <option v-for="categoria in categorias" :value="categoria" class="font-valorant">{{categoria}}</option>
               </select>
             </div>
             <div class="buscadorWeapons col-11 col-sm-4">
