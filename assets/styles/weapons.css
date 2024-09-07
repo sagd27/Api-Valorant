@@ -30,6 +30,9 @@
     &:hover .nombreArma{
       opacity: 1;
     }
+    &:hover .custombtn {
+        opacity: 1;
+    }
   
   }
   .customCardWeapons .card{
@@ -59,6 +62,16 @@
   .btnDetail{
     text-decoration: none;
   }
+.custombtn{
+    translate: 210px -40px;
+    transform: rotate(0.03turn);
+    transition: 200ms;
+    opacity: 0;
+    box-shadow: 0px 5px 15px #000000;
+    &:hover {
+        scale: 1.20;
+    }
+}
   
   @media (max-width: 575px) {
     .custom-filtradoresWeapons {

@@ -8,7 +8,9 @@ const appWeapons = createApp({
             elementos: [],
             elementosBk: [],
             categorias: [],
-            categoriaSeleccionadas: [],
+            categoriaSeleccionada: [],
+            elementosFavoritos: [],
+            eliminarFavoritos: [],
             buscarTexto:""
         }
     },
@@ -34,11 +36,11 @@ const appWeapons = createApp({
             let filtroTexto = this.elementosBk.filter(elemento => elemento.displayName.toLowerCase().includes(this.buscarTexto.toLowerCase()))
 
             this.elementos = filtroTexto
-            console.log(this.categoriaSeleccionadas);
-            if(this.categoriaSeleccionadas === "none" || this.categoriaSeleccionadas === "Category"){
+            console.log(this.categoriaSeleccionada);
+            if(this.categoriaSeleccionada === "none" || this.categoriaSeleccionada === "Category"){
                 this.elementos = filtroTexto
             }else {
-                    this.elementos = filtroTexto.filter(elemento => elemento.category.includes(this.categoriaSeleccionadas))
+                    this.elementos = filtroTexto.filter(elemento => elemento.category.includes(this.categoriaSeleccionada))
                 }
             }
         }
