@@ -5,43 +5,42 @@ const {createApp} = Vue
 const appWeapons = createApp({
     data(){
         return{
-            elementos:[]
+            elementos: [],
+            elementosBk: [],
+            categorias: [],
+            categoriaSeleccionadas: [],
+            buscarTexto:""
         }
     },
     created(){
         this.obtenerDatos(urlApiWeapons);
-        // console.log(this.elementos);
         
     },
     methods:{
         obtenerDatos(url){
             fetch(url).then(response =>response.json()).then(datos => {
-                // console.log(datos);
+                this.elementosBk = datos.data;
+                console.log(this.elementosBk);
                 this.elementos = datos.data;
-                console.log(this.elementos);
+                this.categorias = Array.from(new Set(this.elementos.map((elemento) => elemento.category.split('::')[1]
+            )))
+                console.log(this.categorias);
                 
             })
         }
-    }
-}).mount('#appWeapons');
+    },
+    computed:{
+        filtros(){
+            let filtroTexto = this.elementosBk.filter(elemento => elemento.displayName.toLowerCase().includes(this.buscarTexto.toLowerCase()))
 
-// fetch('https://valorant-api.com/v1/weapons')
-// .then(response =>response.json())
-// .then(datos => {
-//     console.log(datos);
-//     const weapons = datos.data; // Asumiendo que el array de armas está en data.data
-//     const uniqueNames = new Set();
-//     const uniqueWeapons = [];
-
-//     weapons.forEach(weapon => {
-//       if (!uniqueNames.has(weapon.displayName)) {
-//         uniqueNames.add(weapon.displayName);
-//         uniqueWeapons.push(weapon);
-//       }
-//     });
-
-//     console.log(uniqueWeapons);
-//   })
-//   .catch(error => console.error('Error fetching weapon data:', error));
+            this.elementos = filtroTexto
+            console.log(this.categoriaSeleccionadas);
+            if(this.categoriaSeleccionadas === "none" || this.categoriaSeleccionadas === "Category"){
+                this.elementos = filtroTexto
+            }else {
+                    this.elementos = filtroTexto.filter(elemento => elemento.category.includes(this.categoriaSeleccionadas))
+                }
+            }
+        }
     
-// });
+}).mount('#appWeapons');

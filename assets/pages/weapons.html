@@ -71,16 +71,15 @@
         <div class="container">
           <div class="row justify-content-between custom-filtradoresWeapons">
             <div class="selectWeapons col-11 col-sm-4">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Weapons</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+              {{filtros}}
+              <select v-model="categoriaSeleccionadas" class="form-select" aria-label="Default select example">
+                <option selected>Category</option>
+                <option v-for="categoria in categorias" :value="categoria">{{categoria}}</option>
               </select>
             </div>
             <div class="buscadorWeapons col-11 col-sm-4">
               <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input v-model="buscarTexto" class="form-control me-2 rounded-pill ps-2" type="search" placeholder="Search" aria-label="Search">
                 
               </form>
             </div>
@@ -90,7 +89,12 @@
           <div class="row justify-content-md-around gap-5">
             <div v-for="elemento in elementos" class="col-12 col-sm-5 customCardWeapons">
               <div class="card">
-                <a href="#"><img :src= "elemento.displayIcon" class="card-img-top customImgWeapons" :alt="elemento.displayIcon"></a>
+                <a class="btnDetail" href="#">
+                  <img :src= "elemento.displayIcon" class="card-img-top customImgWeapons" :alt="elemento.displayIcon"> 
+                  <img :src= "elemento.killStreamIcon" class="position-absolute card-img-top customImgWeapons-hover" :alt="elemento.killStreamIcon">
+
+                  <h4 class="nombreArma">{{elemento.displayName}}</h4>
+                </a>
               </div>
             </div>
           </div>
