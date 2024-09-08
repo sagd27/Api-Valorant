@@ -65,3 +65,7 @@ transition: 500ms;
         translate: 170px 290px
 
 }
+.fondoTransparante {
+        background-color: #ff465657;
+        backdrop-filter: blur(8px);
+      }
