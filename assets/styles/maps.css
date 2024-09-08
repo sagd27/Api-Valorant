@@ -1,0 +1,71 @@
+.card-tamaño{
+
+height: 350px;
+border: 0px!important;
+width: 250px;
+box-shadow: 0px 0px 15px black;
+transition: 500ms;
+
+&:hover{
+        box-shadow: 0px 5px 20px black;
+        scale: 1.08;
+     
+}
+
+& img{  object-fit: cover ;
+        height: 350px;
+        width: 250px;
+
+ }
+ &:hover .fondo-map{
+        opacity: 1;
+        scale: 0.8;
+        translate: 0px -35px;
+        filter: drop-shadow(1px 1px 20px #382f27);
+
+}
+&:hover .text-card{
+        opacity: 1;
+
+
+
+
+}
+
+}
+.fondo-map{
+        width: 200px;
+        scale: 0.6;
+        opacity: 0;
+        transition: 500ms;
+        object-fit: cover;
+       
+
+}
+
+.text-card{
+   opacity: 0;
+        translate: 30px 310px;
+        transition: 500ms;
+     
+
+}
+
+.btn-fav{
+        
+        max-width: 40px;
+        height: 50px;
+        border-radius: 50%;
+
+
+}
+.btn-fav svg{
+        height: 40px;
+        width: 50px;
+        translate: 170px 290px
+
+}
+.fondoTransparante {
+        background-color: #ff465657;
+        backdrop-filter: blur(8px);
+      }

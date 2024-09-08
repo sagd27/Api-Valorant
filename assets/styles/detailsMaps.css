@@ -1,0 +1,26 @@
+.img-maps{
+
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+}
+.bg-maps{
+        object-fit: cover;
+        background-image: url(../media/bgImageMapasDetails.png);
+
+}
+
+.card-regions{
+        width: 220px;
+        height: 280px;
+        box-shadow: 1px 12px 15px;
+        
+        transition: 500ms;
+
+        &:hover{
+                box-shadow: 1px 17px 35px black;
+                scale: 1.08;
+                transition: 500ms;
+        }
+}
+
