@@ -156,18 +156,7 @@
   background-color: #ff4656;
 }
 
-.texto1 {
-  margin-top: 10px;
-  font-size: 1.6rem;
-  color: #ffffff;
-}
 
-.texto2 {
-  margin-top: 10px;
-
-  font-size: 1.3rem;
-  color: #ffffff;
-}
 .contenedorAgentes {
   min-height: 500px;
   display: flex;
@@ -193,26 +182,37 @@
   font-family: valorant;
 }
 .contenedorArmas {
-  height: 100px;
-  max-width: 100vw;
-  min-height: 500px;
+ 
+border-radius: 10px;
+max-width: 100vw;
+  min-height: 400px;
+
 }
 .armas {
   display: flex;
   align-items: center;
   width: 190px;
+  transform: skewY(-10deg)
+  
 }
 
 .contenedorArmas img {
   width: 0px;
   flex-grow: 1;
   object-fit: cover;
-  transition: 0.4s;
+  transition: 0.4s ;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.3);
+  background-color: #ff4656;
+  border-radius: 5px;
+
 }
 .contenedorArmas img:hover {
   cursor: default;
-  width: 300px;
+scale: 1.4;
+transform: skewY(10deg);
+
   filter: contrast(120%);
+
 }
 .mapaDiv img {
   height: 230px;
@@ -227,7 +227,6 @@
 }
 
 .mapaDiv {
-  display: flex;
   width: 23vh;
   flex-grow: 1;
   object-fit: cover;
