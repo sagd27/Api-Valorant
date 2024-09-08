@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/detailsAgents.css" />
   </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
@@ -63,7 +64,37 @@
           </div>
         </nav>
       </header>
-      <main class="flex-grow-1 bg-image"></main>
+      
+      <main id="app" class="flex-grow-1 bg-image d-flex flex-column p-4 gap-3">
+          <div v-if="agents" class="rounded bg-image-details border border-light d-flex flex-wrap justify-content-center align-self-center gap-3 p-3">
+            <img class="object-fit-cover rounded col-10 col-md-7 col-lg-5 img-fluid align-self-center" :src="agents.fullPortrait" :alt="agents.displayName">
+            <div class="rounded contenedor d-flex flex-column gap-2 p-2 col-10 col-md-7 col-lg-5">
+                <h3 class="align-self-center text-center text-light font-valorant">{{agents.displayName}}</h3>
+                <ul class="text-start text-light gap-2 d-flex flex-column list-unstyled">
+                    <li><span>{{agents.description}}</span> </li>
+                    <li><span  class="fw-bold font-valorant">Role:</span> {{agents.role ? agents.role.displayName : 'No role'}}</li>
+                    <li><span class="fw-bold font-valorant">Abilities:</span>
+                      <ul class="list-unstyled d-flex gap-2 flex-column">
+                        <li v-for="(ability, index) in agents.abilities" :key="index">
+                          <div 
+                            class="d-flex align-items-center gap-2" 
+                            @mouseover="showPopover(index, ability.description)" 
+                            @mouseleave="hidePopover(index)">
+                            <img class="iconAbilities " :src="ability.displayIcon" :alt="ability.displayName"> 
+                              <p class="d-flex align-self-center m-0 font-valorant">{{ability.displayName}}</p>
+                            <div v-if="popoverIndex === index" class="popover-content text-light p-2 rounded">
+                            {{ ability.description }}
+                            </div>
+                          </div>
+                        </li>
+            
+                      </ul>
+                    </li>  
+                </ul>
+            </div>
+          </div>
+      </main>
+        
       <footer
         class="footer bg-rojoPrincipal d-flex flex-column justify-content-between"
       >
@@ -97,5 +128,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../js/detailsAgents.js"></script>
   </body>
 </html>

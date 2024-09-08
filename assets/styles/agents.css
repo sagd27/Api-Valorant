@@ -74,3 +74,7 @@
     box-shadow: 0px 5px 10px black;
   }
 }
+.fondoTransparante {
+  background-color: #ff465657;
+  backdrop-filter: blur(8px);
+}
