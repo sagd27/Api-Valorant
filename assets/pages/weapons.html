@@ -96,44 +96,49 @@
               <div
                 class="modal-body d-flex pt-5 flex-wrap gap-5 justify-content-center"
               >
-              <div v-for="elemento in elementosFavoritos" class="customCardWeapons">
-                <div class="card">
-                  <a class="btnDetail" href="#">
-                    <img
-                      :src="elemento.displayIcon"
-                      class="card-img-top customImgWeapons"
-                      :alt="elemento.displayIcon"
-                    />
-                  </a>
-                  <div class="position-absolute fondoArma">
-                    <h4 class="nombreArma">{{elemento.displayName}}</h4>
-                    <button
-                    @click="eliminarFavorito(elemento)"
-                      class="custombtn btn btn-danger position-absolute"
+                <div
+                  v-for="elemento in elementosFavoritos"
+                  class="customCardWeapons"
+                >
+                  <div class="card">
+                    <a
+                      class="btnDetail"
+                      :href="'./detailsWeapons.html?uuid='+elemento.uuid"
                     >
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-backpack3-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M5 10v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z" />
-                    <path
-                      d="M6 2v.341a6 6 0 0 0-1.308.653l-.416-1.247a1 1 0 0 0-1.749-.284l-.77 1.027a1 1 0 0 0-.149.917l.803 2.407A6 6 0 0 0 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8c0-.771-.146-1.509-.41-2.186l.801-2.407a1 1 0 0 0-.148-.917l-.77-1.027a1 1 0 0 0-1.75.284l-.415 1.247A6 6 0 0 0 10 2.34V2a2 2 0 1 0-4 0m1 0a1 1 0 0 1 2 0v.083a6 6 0 0 0-2 0zm5.941 2.595a6 6 0 0 0-.8-.937l.531-1.595.77 1.027zM3.86 3.658a6 6 0 0 0-.8.937L2.557 3.09l.77-1.027zm.18 3.772a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.142 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.142M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z"
+                      <img
+                        :src="elemento.displayIcon"
+                        class="card-img-top customImgWeapons"
+                        :alt="elemento.displayIcon"
+                      />
+                    </a>
+                    <div class="position-absolute fondoArma">
+                      <h4 class="nombreArma">{{elemento.displayName}}</h4>
+                      <button
+                        @click="eliminarFavorito(elemento)"
+                        class="custombtn btn btn-danger position-absolute"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-backpack3-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M5 10v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z" />
+                          <path
+                            d="M6 2v.341a6 6 0 0 0-1.308.653l-.416-1.247a1 1 0 0 0-1.749-.284l-.77 1.027a1 1 0 0 0-.149.917l.803 2.407A6 6 0 0 0 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8c0-.771-.146-1.509-.41-2.186l.801-2.407a1 1 0 0 0-.148-.917l-.77-1.027a1 1 0 0 0-1.75.284l-.415 1.247A6 6 0 0 0 10 2.34V2a2 2 0 1 0-4 0m1 0a1 1 0 0 1 2 0v.083a6 6 0 0 0-2 0zm5.941 2.595a6 6 0 0 0-.8-.937l.531-1.595.77 1.027zM3.86 3.658a6 6 0 0 0-.8.937L2.557 3.09l.77-1.027zm.18 3.772a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.142 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.142M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <img
+                      :src="elemento.killStreamIcon"
+                      class="position-absolute card-img-top customImgWeapons-hover"
+                      :alt="elemento.killStreamIcon"
                     />
-                  </svg>
-                    </button>
                   </div>
-                  <img
-                    :src="elemento.killStreamIcon"
-                    class="position-absolute card-img-top customImgWeapons-hover"
-                    :alt="elemento.killStreamIcon"
-                  />
                 </div>
-              </div>
-            
               </div>
               <div class="modal-footer">
                 <button class="btn btn-danger" @click="limpiarStorage()">
@@ -183,31 +188,28 @@
         <div>
           <div class="contenedor d-flex flex-wrap p-5 justify-content-center">
             <div
-            v-if="elementos.length == 0"
-            class="mensajeAmigable d-block text-center"
-          >
-            <p class="fs-1 fw-bold text-light pt-5">No matches found</p>
-            <img
-              class="col-10"
-              src="https://i.pinimg.com/originals/ff/ef/df/ffefdfc37c7c6af3f081c9ec527b3d2a.png"
-              alt=""
-            />
-          </div>
-            <div
-              v-for="elemento in elementos"
-              class="customCardWeapons"
+              v-if="elementos.length == 0"
+              class="mensajeAmigable d-block text-center"
             >
+              <p class="fs-1 fw-bold text-light pt-5">No matches found</p>
+              <img
+                class="col-10"
+                src="https://i.pinimg.com/originals/ff/ef/df/ffefdfc37c7c6af3f081c9ec527b3d2a.png"
+                alt=""
+              />
+            </div>
+            <div v-for="elemento in elementos" class="customCardWeapons">
               <div class="card">
-                <a class="btnDetail" href="#">
+                <div class="btnDetail">
                   <img
                     :src="elemento.displayIcon"
                     class="card-img-top customImgWeapons"
                     :alt="elemento.displayIcon"
                   />
-                </a>
-                  <div class="position-absolute fondoArma">
-                    <h4 class="nombreArma">{{elemento.displayName}}</h4>
-                    <button
+                </div>
+                <div class="position-absolute fondoArma">
+                  <h4 class="nombreArma">{{elemento.displayName}}</h4>
+                  <button
                     @click="agregarFavorito(elemento)"
                     class="custombtn btn btn-danger position-absolute"
                   >
@@ -227,15 +229,13 @@
                       />
                     </svg>
                   </button>
-                  </div>
-                  <img
+                </div>
+                <a :href="'./detailsWeapons.html?uuid='+elemento.uuid"
+                  ><img
                     :src="elemento.killStreamIcon"
                     class="position-absolute card-img-top customImgWeapons-hover"
                     :alt="elemento.killStreamIcon"
-                  />
-
-                 
-                
+                /></a>
               </div>
             </div>
           </div>

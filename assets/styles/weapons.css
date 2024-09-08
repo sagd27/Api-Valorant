@@ -1,109 +1,106 @@
-.tituloWeapons{
-    font-family: Valorant;
-    color: #ff4654;
-    justify-content: center;
-    margin: 2rem 0;
-  }
-  .custom-filtradoresWeapons{
-    gap: 10px;
-    margin: 2rem 1rem 5rem 1rem;
-  }
-  
-  .customCardWeapons{
-    background-color: rgba(0, 0, 0, 0);
-    margin: 3rem 0;
-    border-radius: 10px;
-    transition: 500ms;
-    width: 260px;
-    height: 450px;
-
-    &:hover .customImgWeapons{
-        opacity: 0;
-    }
-    &:hover .customImgWeapons-hover{
-      opacity: 1;
-      scale: 1.04;
-    }
-    &:hover .fondoArma {
-      background-color: #ff4654;
-      transform: rotate(-0.03turn);
-      opacity: 1;
-      
-    }
-    &:hover .nombreArma{
-      opacity: 1;
-    }
-    &:hover .custombtn {
-        opacity: 1;
-    }
-  
-  }
-  .fondoArma{
-    width: 280px;
-    height: 90px;
-    z-index: 0;
-    border-radius: 10px;
-    background-color: #ff4654;
-    rotate: 0.03;
-    translate: 0px -80px;
-    opacity: 0;
-    transition: 500ms;
-
-    
-  }
-  .customCardWeapons .card{
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-  }
-  .customImgWeapons{
-    max-height: 6rem;
-    object-fit: contain;
-    transition: opacity 0.3s ease;
-    transition: 500ms;
-    translate: 0px -80px;
-  }
-  .customImgWeapons-hover{
-    opacity: 0;
-    translate: 10px -90px;
-    transition: opacity 0.3s ease;
-    transition: 500ms;
-    
-  }
-  .nombreArma{
-    text-decoration: none;
-    color: #ffffff;
-    font-family: Valorant;
-    font-size: 20px;
-    opacity: 0;
-    padding-top: 50px;
-    padding-left: 10px;
-  }
-  .btnDetail{
-    text-decoration: none;
-  }
-.custombtn{
-    translate: 130px -25px;
-    transform: rotate(0.03turn);
-    transition: 200ms;
-    opacity: 0;
-    box-shadow: 0px 5px 15px #000000;
-    &:hover {
-        scale: 1.20;
-    }
+.tituloWeapons {
+  font-family: Valorant;
+  color: #ff4654;
+  justify-content: center;
+  margin: 2rem 0;
 }
-.contenedor{
-    gap: 380px;
+.custom-filtradoresWeapons {
+  gap: 10px;
+  margin: 2rem 1rem 5rem 1rem;
+}
+
+.customCardWeapons {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 3rem 0;
+  border-radius: 10px;
+  transition: 500ms;
+  width: 230px;
+  height: 150px;
+
+  &:hover .customImgWeapons {
+    opacity: 0;
+  }
+  &:hover .customImgWeapons-hover {
+    opacity: 1;
+    scale: 1.04;
+  }
+  &:hover .fondoArma {
+    background-color: #ff4654;
+    transform: rotate(-0.03turn);
+    opacity: 1;
+  }
+  &:hover .nombreArma {
+    opacity: 1;
+  }
+  &:hover .custombtn {
+    opacity: 1;
+  }
+}
+.fondoArma {
+  width: 320px;
+  height: 110px;
+  z-index: 0;
+  border-radius: 10px;
+  background-color: #ff4654;
+  rotate: 0.03;
+  translate: -20px 30px;
+  opacity: 0;
+  transition: 500ms;
+}
+.customCardWeapons .card {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.customImgWeapons {
+  max-height: 6rem;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  transition: 500ms;
+  translate: 0px 40px;
+}
+.customImgWeapons-hover {
+  z-index: 3;
+  opacity: 0;
+  translate: 70px -10px;
+  transition: opacity 0.3s ease;
+  transition: 500ms;
+}
+.nombreArma {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: Valorant;
+  font-size: 20px;
+  opacity: 0;
+  padding-top: 50px;
+  padding-left: 10px;
+}
+.btnDetail {
+  text-decoration: none;
+}
+.custombtn {
+  z-index: 5;
+  translate: 50px 5px;
+  transform: rotate(0.03turn);
+  transition: 200ms;
+  opacity: 0;
+  box-shadow: 0px 5px 15px #000000;
+  &:hover {
+    scale: 1.2;
+  }
+}
+.contenedor {
+  gap: 200px;
 }
 .fondoTransparante {
   background-color: #ff465657;
   backdrop-filter: blur(8px);
 }
-  
-  @media (max-width: 575px) {
-    .custom-filtradoresWeapons {
-        flex-direction: column-reverse; /* Invierte el orden en pantallas pequeñas */
-    }
-    .customCardWeapons{
-      margin: 5rem 0;
-    }
+
+@media (max-width: 575px) {
+  .custom-filtradoresWeapons {
+    flex-direction: column-reverse; /* Invierte el orden en pantallas pequeñas */
   }
+  .customCardWeapons {
+    margin: 5rem 0;
+  }
+}
