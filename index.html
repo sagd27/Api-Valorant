@@ -68,6 +68,7 @@
           </div>
         </nav>
       </header>
+
       <main id="app" class="backgroundIndex bg-image flex-grow-1">
         <div class="cover col-12">
           <img
@@ -77,8 +78,10 @@
           />
         </div>
         <div class="textoIntro col-12 d-flex flex-column align-items-center">
-          <h1 class="texto1 fw-bold font-valorant">Destroy the limits</h1>
-          <h2 class="texto2 fw-bold col-8 text-center">
+          <h1 class="mt-2 fs-2 text-white fw-bold font-valorant">
+            Destroy the limits
+          </h1>
+          <h2 class="mt-2 fs-5 text-white fw-bold col-8 text-center">
             Combine your style and experience in a global and competitive
             scenario. You have 13 rounds to attack and defend your side with
             precise weapons and tactical skills. Plus, with only one life per
@@ -90,7 +93,7 @@
           <h1 class="font-valorant text-center">The Agents</h1>
         </a>
 
-        <div class="contenedorAgentes col-12 d-flex flex-wrap">
+        <div class="contenedorAgentes w-100 col-12 d-flex flex-wrap">
           <img src="./assets/media/iniciador.png" alt="" />
           <p>Initiator</p>
           <img src="./assets/media/duelista.png" alt="" />
@@ -108,9 +111,9 @@
 
         <div class="d-flex justify-content-center col-12">
           <div
-            class="contenedorArmas col-6 d-flex align-items-center flex-wrap justify-content-around gap-5"
+            class="contenedorArmas d-flex align-items-center flex-wrap justify-content-around gap-5"
           >
-            <div class="armas" v-for="arma in armas" id="arma">
+            <div class="armas gap-5" v-for="arma in armas" id="arma">
               <img class="card-img-top" :src="arma.displayIcon" alt="" />
             </div>
           </div>
@@ -125,7 +128,7 @@
           id="maps"
           class="contMapa col-12 flex-wrap justify-content-center d-flex pb-5"
         >
-          <div class="mapaDiv" v-for="mapasA in mapas">
+          <div class="mapaDiv d-flex" v-for="mapasA in mapas">
             <img class="mapaB" :src="mapasA.listViewIconTall" alt="" />
           </div>
         </div>
