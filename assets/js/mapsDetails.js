@@ -32,10 +32,10 @@ const app = createApp({
                         fetch(url).then(reponse => reponse.json()).then(resp =>{
 
                                this.map = resp.data
-                        //        console.log(this.map)
+        
 
                                this.callouts = Array.from(new Set(this.map.callouts));
-                                console.log(this.callouts);
+                                
                              
                                 
                                 
