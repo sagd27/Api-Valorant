@@ -169,7 +169,7 @@
   color: #ffffff;
 }
 .contenedorAgentes {
-  min-height: 400px;
+  min-height: 500px;
   display: flex;
   align-items: center;
 }
