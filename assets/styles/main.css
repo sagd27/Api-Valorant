@@ -123,6 +123,12 @@
   }
 }
 
+.nav-link {
+  font-family: valorant;
+  &:hover {
+    color: #ff4654;
+  }
+}
 .btnEM {
   display: block;
   margin: 20px auto;
