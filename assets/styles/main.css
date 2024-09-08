@@ -4,7 +4,6 @@
   margin: 0px;
 }
 @font-face {
-
   font-family: "Valorant";
   src: url(../font/Valorant\ Font.ttf);
 }
@@ -124,4 +123,124 @@
   }
 }
 
+.nav-link {
+  font-family: valorant;
+  &:hover {
+    color: #ff4654;
+  }
+}
+.btnEM {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  color: #ffffff;
 
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnEM:hover {
+  color: #ffffff;
+  background-color: linear-gradient(to right, #ff4654, #6e282f);
+}
+
+.cover img {
+  height: 30vh;
+  object-fit: cover;
+}
+
+.textoIntro {
+  min-height: 10vh;
+  background-color: #ff4656;
+}
+
+.texto1 {
+  margin-top: 10px;
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.texto2 {
+  margin-top: 10px;
+
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+.contenedorAgentes {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+.contenedorAgentes img {
+  width: 230px;
+  flex-grow: 1;
+  object-fit: cover;
+  transition: 0.5s ease;
+  opacity: 0.8;
+}
+.contenedorAgentes img:hover {
+  cursor: default;
+  width: 320px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+.contenedorAgentes p {
+  font-weight: bold;
+  color: #ffffff;
+  translate: -160px 130px;
+  font-family: valorant;
+}
+.contenedorArmas {
+  height: 100px;
+  max-width: 100vw;
+  min-height: 500px;
+}
+.armas {
+  display: flex;
+  align-items: center;
+  width: 190px;
+}
+
+.contenedorArmas img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  transition: 0.4s;
+}
+.contenedorArmas img:hover {
+  cursor: default;
+  width: 300px;
+  filter: contrast(120%);
+}
+.mapaDiv img {
+  height: 230px;
+
+  object-fit: cover;
+}
+
+.mapaB {
+  width: 300px;
+  height: 260px;
+  object-fit: cover;
+}
+
+.mapaDiv {
+  display: flex;
+  width: 23vh;
+  flex-grow: 1;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.mapaDiv {
+  max-width: 25%;
+
+  &:hover .mapaB {
+    transform: scale(1.12);
+    opacity: 1;
+    filter: contrast(120%);
+    transition: 400ms;
+  }
+}

@@ -1,101 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Valorant</title>
-    <link
-      rel="shortcut icon"
-      href="./assets/media/iconoValo.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./assets/styles/main.css" />
-  </head>
-  <body>
-    <div class="d-flex flex-column min-vh-100">
-      <header
-        class="header bg-grisPrincipal d-flex justify-content-between align-items-center"
-      >
-        <a href=""
-          ><img class="navIcon" src="./assets/media/logoValo.png" alt=""
-        /></a>
-        <nav class="navbar navbar-expand-lg bg-grisPrincipal">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span
-                ><img class="navIcon" src="./assets/media/navIcon.webp" alt=""
-              /></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav textNav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./assets/pages/agents.html"
-                    >Agents</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./assets/pages/weapons.html"
-                    >Weapons</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./assets/pages/maps.html">Maps</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./assets/pages/stats.html">Stats</a>
-                </li>
-              </ul>
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valorant</title>
+  <link rel="shortcut icon" href="./assets/media/iconoValo.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/styles/main.css" />
+</head>
+
+<body>
+  <div class="d-flex flex-column min-vh-100">
+    <header class="header bg-grisPrincipal d-flex justify-content-between align-items-center">
+      <a href=""><img class="navIcon" src="./assets/media/logoValo.png" alt="" /></a>
+      <nav class="navbar navbar-expand-lg bg-grisPrincipal">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span><img class="navIcon" src="./assets/media/navIcon.webp" alt="" /></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav textNav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./assets/pages/agents.html">Agents</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./assets/pages/weapons.html">Weapons</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./assets/pages/maps.html">Maps</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./assets/pages/stats.html">Stats</a>
+              </li>
+            </ul>
           </div>
-        </nav>
-      </header>
-      <main class="flex-grow-1 bg-image"></main>
-      <footer
-        class="footer bg-rojoPrincipal d-flex flex-column justify-content-between"
-      >
-        <div class="w-100 h-50 text-center pt-5">
-          <p class="fw-bold text-light fs-4">© Grupo 4 - Cohort 5 - 2024</p>
         </div>
-        <div
-          class="icontFoot d-flex justify-content-around text-decoration-none p-4 flex-wrap"
-        >
-          <a href="https://github.com/sagd27" target="_blank"
-            ><img src="./assets/media/gitIcon.png" alt="" />
-            <p>sagd27</p></a
-          ><a href="https://github.com/Boca117" target="_blank"
-            ><img src="./assets/media/gitIcon.png" alt="" />
-            <p>Boca117</p></a
-          ><a href="https://github.com/estefanymontilva" target="_blank"
-            ><img src="./assets/media/gitIcon.png" alt="" />
-            <p>estefanymontilva</p></a
-          ><a href="https://github.com/Jlorduyz" target="_blank"
-            ><img src="./assets/media/gitIcon.png" alt="" />
-            <p>Jlorduyz</p></a
-          ><a href="https://github.com/TI-Angel" target="_blank"
-            ><img src="./assets/media/gitIcon.png" alt="" />
-            <p>TI-Angel</p></a
-          >
-        </div>
-      </footer>
+      </nav>
+    </header>
+    <main id="app" class="backgroundIndex bg-image flex-grow-1">
+      <div class="cover col-12">
+        <img class="col-12" src="./assets/media/Valorant_Cover_Art.webp" alt="">
+      </div>
+      <div class="textoIntro col-12 d-flex flex-column align-items-center">
+        <h1 class="texto1 fw-bold font-valorant"> Destroy the limits </h1>
+        <h2 class="texto2 fw-bold col-8 text-center">Combine your style and experience in a global and competitive
+          scenario. You have 13 rounds to attack and defend your side with precise weapons and tactical skills. Plus,
+          with only one life per round, you'll have to think faster than your opponent if you want to survive.</h2>
+      </div>
+      <a class="btn btnEM" href="assets/pages/agents.html">
+        <h1 class=" font-valorant text-center">The Agents</h1>
+      </a>
+
+
+      <div  class="contenedorAgentes col-12 d-flex flex-wrap ">
+
+        <img src="./assets/media/iniciador.png" alt="">
+        <p>Initiator</p>
+        <img src="./assets/media/duelista.png" alt="">
+        <p>Duelist</p>
+        <img src="./assets/media/controlador.png" alt="">
+        <p>Controller</p>
+        <img src="./assets/media/centinela.png" alt="">
+        <p>Sentinel</p>
+      </div>
+
+
+      <a class="btn btnEM" href="assets/pages/weapons.html">
+        <h1 class=" font-valorant text-center">CHOOSE YOUR WEAPONES</h1>
+        <h2 class="text-center">Creativity is your best weapon.</h2>
+      </a>
+
+<div class="d-flex justify-content-center col-12 ">
+
+  <div class="contenedorArmas col-6 d-flex align-items-center flex-wrap justify-content-around gap-5">
+    <div class="armas " v-for="arma in armas" id="arma">
+      <img class="card-img-top" :src="arma.displayIcon" alt="">
+      
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></script>
-  </body>
+  </div>
+  
+</div>
+
+  
+      <a class="btn btnEM" href="assets/pages/maps.html">
+        <h1 class="font-valorant text-center">Your Maps</h1>
+        <h2 class="text-center">Fight around the world</h2>
+
+      </a>
+
+      <div id="maps" class="contMapa col-12 flex-wrap justify-content-center  d-flex pb-5 ">
+       
+        <div class="mapaDiv" v-for="mapasA in mapas">
+
+          <img class="mapaB" :src="mapasA.listViewIconTall" alt="">
+          
+     
+
+        </div>
+
+        
+      </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="footer bg-rojoPrincipal d-flex flex-column justify-content-between">
+    <div class="w-100 h-50 text-center pt-5">
+      <p class="fw-bold text-light fs-4">© Grupo 4 - Cohort 5 - 2024</p>
+    </div>
+    <div class="icontFoot d-flex justify-content-around text-decoration-none p-4 flex-wrap">
+      <a href="https://github.com/sagd27" target="_blank"><img src="./assets/media/gitIcon.png" alt="" />
+        <p>sagd27</p>
+      </a><a href="https://github.com/Boca117" target="_blank"><img src="./assets/media/gitIcon.png" alt="" />
+        <p>Boca117</p>
+      </a><a href="https://github.com/estefanymontilva" target="_blank"><img src="./assets/media/gitIcon.png" alt="" />
+        <p>estefanymontilva</p>
+      </a><a href="https://github.com/Jlorduyz" target="_blank"><img src="./assets/media/gitIcon.png" alt="" />
+        <p>Jlorduyz</p>
+      </a><a href="https://github.com/TI-Angel" target="_blank"><img src="./assets/media/gitIcon.png" alt="" />
+        <p>TI-Angel</p>
+      </a>
+    </div>
+
+  </footer>
+  </div>
+  <script type="module" src="./assets/js/main.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  </script>
+</body>
+
 </html>
