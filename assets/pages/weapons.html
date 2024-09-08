@@ -17,8 +17,6 @@
     />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/weapons.css" />
-
-
   </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
@@ -66,9 +64,87 @@
           </div>
         </nav>
       </header>
-      <main class="flex-grow-1 bg-image" id="appWeapons">
 
-        <div class="tituloWeapons d-flex ">
+      <main class="flex-grow-1 bg-image" id="appWeapons">
+        <button
+          v-if="elementosFavoritos.length > 0"
+          class="btn btnFav"
+          data-bs-toggle="modal"
+          data-bs-target="#fav"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-backpack3-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="M5 10v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z" />
+            <path
+              d="M6 2v.341a6 6 0 0 0-1.308.653l-.416-1.247a1 1 0 0 0-1.749-.284l-.77 1.027a1 1 0 0 0-.149.917l.803 2.407A6 6 0 0 0 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8c0-.771-.146-1.509-.41-2.186l.801-2.407a1 1 0 0 0-.148-.917l-.77-1.027a1 1 0 0 0-1.75.284l-.415 1.247A6 6 0 0 0 10 2.34V2a2 2 0 1 0-4 0m1 0a1 1 0 0 1 2 0v.083a6 6 0 0 0-2 0zm5.941 2.595a6 6 0 0 0-.8-.937l.531-1.595.77 1.027zM3.86 3.658a6 6 0 0 0-.8.937L2.557 3.09l.77-1.027zm.18 3.772a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.142 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.142M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+        <div class="modal overflow-auto" id="fav">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content fondoTransparante">
+              <div class="modal-header">
+                <h5 class="modal-title text-light fw-bold">FAVORITES</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div
+                class="modal-body d-flex pt-5 flex-wrap gap-5 justify-content-center"
+              >
+              <div v-for="elemento in elementosFavoritos" class="customCardWeapons">
+                <div class="card">
+                  <a class="btnDetail" href="#">
+                    <img
+                      :src="elemento.displayIcon"
+                      class="card-img-top customImgWeapons"
+                      :alt="elemento.displayIcon"
+                    />
+                  </a>
+                  <div class="position-absolute fondoArma">
+                    <h4 class="nombreArma">{{elemento.displayName}}</h4>
+                    <button
+                    @click="eliminarFavorito(elemento)"
+                      class="custombtn btn btn-danger position-absolute"
+                    >
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-backpack3-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M5 10v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z" />
+                    <path
+                      d="M6 2v.341a6 6 0 0 0-1.308.653l-.416-1.247a1 1 0 0 0-1.749-.284l-.77 1.027a1 1 0 0 0-.149.917l.803 2.407A6 6 0 0 0 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8c0-.771-.146-1.509-.41-2.186l.801-2.407a1 1 0 0 0-.148-.917l-.77-1.027a1 1 0 0 0-1.75.284l-.415 1.247A6 6 0 0 0 10 2.34V2a2 2 0 1 0-4 0m1 0a1 1 0 0 1 2 0v.083a6 6 0 0 0-2 0zm5.941 2.595a6 6 0 0 0-.8-.937l.531-1.595.77 1.027zM3.86 3.658a6 6 0 0 0-.8.937L2.557 3.09l.77-1.027zm.18 3.772a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.142 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.142M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z"
+                    />
+                  </svg>
+                    </button>
+                  </div>
+                  <img
+                    :src="elemento.killStreamIcon"
+                    class="position-absolute card-img-top customImgWeapons-hover"
+                    :alt="elemento.killStreamIcon"
+                  />
+                </div>
+              </div>
+            
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-danger" @click="limpiarStorage()">
+                  Clean
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tituloWeapons d-flex">
           <h1>WEAPONS</h1>
         </div>
 
@@ -76,38 +152,94 @@
           <div class="row justify-content-between custom-filtradoresWeapons">
             <div class="selectWeapons col-11 col-sm-4">
               {{filtros}}
-              <select v-model="categoriaSeleccionada" class="form-select" aria-label="Default select example">
+              <select
+                v-model="categoriaSeleccionada"
+                class="form-select"
+                aria-label="Default select example"
+              >
                 <option class="font-valorant">Category</option>
-                <option v-for="categoria in categorias" :value="categoria" class="font-valorant">{{categoria}}</option>
+                <option
+                  v-for="categoria in categorias"
+                  :value="categoria"
+                  class="font-valorant"
+                >
+                  {{categoria}}
+                </option>
               </select>
             </div>
             <div class="buscadorWeapons col-11 col-sm-4">
               <form class="d-flex">
-                <input v-model="buscarTexto" class="form-control me-2 rounded-pill ps-2" type="search" placeholder="Search" aria-label="Search">
-                
+                <input
+                  v-model="buscarTexto"
+                  class="form-control me-2 rounded-pill ps-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
               </form>
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="row justify-content-md-around gap-5">
-            <div v-for="elemento in elementos" class="col-12 col-sm-5 customCardWeapons">
+        <div>
+          <div class="contenedor d-flex flex-wrap p-5 justify-content-center">
+            <div
+            v-if="elementos.length == 0"
+            class="mensajeAmigable d-block text-center"
+          >
+            <p class="fs-1 fw-bold text-light pt-5">No matches found</p>
+            <img
+              class="col-10"
+              src="https://i.pinimg.com/originals/ff/ef/df/ffefdfc37c7c6af3f081c9ec527b3d2a.png"
+              alt=""
+            />
+          </div>
+            <div
+              v-for="elemento in elementos"
+              class="customCardWeapons"
+            >
               <div class="card">
                 <a class="btnDetail" href="#">
-                  <img :src= "elemento.displayIcon" class="card-img-top customImgWeapons" :alt="elemento.displayIcon"> 
-                  <img :src= "elemento.killStreamIcon" class="position-absolute card-img-top customImgWeapons-hover" :alt="elemento.killStreamIcon">
-
-                  <h4 class="nombreArma">{{elemento.displayName}}</h4>
-                  <button class="custombtn btn btn-danger position-absolute"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backpack3" viewBox="0 0 16 16">
-                    <path d="M4.04 7.43a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"/>
-                    <path d="M6 2.341V2a2 2 0 1 1 4 0v.341c.465.165.904.385 1.308.653l.416-1.247a1 1 0 0 1 1.748-.284l.77 1.027a1 1 0 0 1 .15.917l-.803 2.407C13.854 6.49 14 7.229 14 8v5.5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5V8c0-.771.146-1.509.41-2.186l-.802-2.407a1 1 0 0 1 .15-.917l.77-1.027a1 1 0 0 1 1.748.284l.416 1.247A6 6 0 0 1 6 2.34ZM7 2v.083a6 6 0 0 1 2 0V2a1 1 0 1 0-2 0m5.941 2.595.502-1.505-.77-1.027-.532 1.595q.447.427.8.937M3.86 3.658l-.532-1.595-.77 1.027.502 1.505q.352-.51.8-.937M8 3a5 5 0 0 0-5 5v5.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8a5 5 0 0 0-5-5"/>
-                  </svg></button>
+                  <img
+                    :src="elemento.displayIcon"
+                    class="card-img-top customImgWeapons"
+                    :alt="elemento.displayIcon"
+                  />
                 </a>
+                  <div class="position-absolute fondoArma">
+                    <h4 class="nombreArma">{{elemento.displayName}}</h4>
+                    <button
+                    @click="agregarFavorito(elemento)"
+                    class="custombtn btn btn-danger position-absolute"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-backpack3"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4.04 7.43a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"
+                      />
+                      <path
+                        d="M6 2.341V2a2 2 0 1 1 4 0v.341c.465.165.904.385 1.308.653l.416-1.247a1 1 0 0 1 1.748-.284l.77 1.027a1 1 0 0 1 .15.917l-.803 2.407C13.854 6.49 14 7.229 14 8v5.5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5V8c0-.771.146-1.509.41-2.186l-.802-2.407a1 1 0 0 1 .15-.917l.77-1.027a1 1 0 0 1 1.748.284l.416 1.247A6 6 0 0 1 6 2.34ZM7 2v.083a6 6 0 0 1 2 0V2a1 1 0 1 0-2 0m5.941 2.595.502-1.505-.77-1.027-.532 1.595q.447.427.8.937M3.86 3.658l-.532-1.595-.77 1.027.502 1.505q.352-.51.8-.937M8 3a5 5 0 0 0-5 5v5.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8a5 5 0 0 0-5-5"
+                      />
+                    </svg>
+                  </button>
+                  </div>
+                  <img
+                    :src="elemento.killStreamIcon"
+                    class="position-absolute card-img-top customImgWeapons-hover"
+                    :alt="elemento.killStreamIcon"
+                  />
+
+                 
+                
               </div>
             </div>
           </div>
         </div>
-
       </main>
 
       <footer
@@ -119,22 +251,22 @@
         <div
           class="icontFoot d-flex justify-content-around text-decoration-none p-4 flex-wrap"
         >
-        <a href="https://github.com/sagd27" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>sagd27</p></a
-      ><a href="https://github.com/Boca117" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>Boca117</p></a
-      ><a href="https://github.com/estefanymontilva" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>estefanymontilva</p></a
-      ><a href="https://github.com/Jlorduyz" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>Jlorduyz</p></a
-      ><a href="https://github.com/TI-Angel" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>TI-Angel</p></a
-      >
+          <a href="https://github.com/sagd27" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>sagd27</p></a
+          ><a href="https://github.com/Boca117" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>Boca117</p></a
+          ><a href="https://github.com/estefanymontilva" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>estefanymontilva</p></a
+          ><a href="https://github.com/Jlorduyz" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>Jlorduyz</p></a
+          ><a href="https://github.com/TI-Angel" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>TI-Angel</p></a
+          >
         </div>
       </footer>
     </div>

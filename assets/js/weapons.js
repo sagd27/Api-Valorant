@@ -10,33 +10,59 @@ const appWeapons = createApp({
             categorias: [],
             categoriaSeleccionada: [],
             elementosFavoritos: [],
-            eliminarFavoritos: [],
             buscarTexto:""
         }
     },
     created(){
         this.obtenerDatos(urlApiWeapons);
+        let localData = JSON.parse(localStorage.getItem("elementosFavoritos"))
+        if(localData){
+            this.elementosFavoritos = localData
+        }
         
     },
     methods:{
         obtenerDatos(url){
             fetch(url).then(response =>response.json()).then(datos => {
                 this.elementosBk = datos.data;
-                console.log(this.elementosBk);
                 this.elementos = datos.data;
                 this.categorias = Array.from(new Set(this.elementos.map((elemento) => elemento.category.split('::')[1]
             )))
-                console.log(this.categorias);
                 
             })
-        }
+        },
+        agregarFavorito(elemento) {
+            if (!this.elementosFavoritos.includes(elemento)) {
+              this.elementosFavoritos.push(elemento);
+              localStorage.setItem(
+                "elementosFavoritos",
+                JSON.stringify(this.elementosFavoritos)
+              );
+            }
+          },
+        eliminarFavorito(elemento) {
+            let index = this.elementosFavoritos.findIndex(
+              (res) => res.uuid == elemento.uuid
+            );
+            if (index !== -1) {
+              this.elementosFavoritos.splice(index, 1);
+              localStorage.setItem(
+                "elementosFavoritos",
+                JSON.stringify(this.elementosFavoritos)
+              );
+            }
+          },
+        limpiarStorage() {
+            localStorage.setItem("elementosFavoritos", JSON.stringify(""));
+            this.elementosFavoritos = [];
+          }
+
     },
     computed:{
         filtros(){
             let filtroTexto = this.elementosBk.filter(elemento => elemento.displayName.toLowerCase().includes(this.buscarTexto.toLowerCase()))
 
             this.elementos = filtroTexto
-            console.log(this.categoriaSeleccionada);
             if(this.categoriaSeleccionada === "none" || this.categoriaSeleccionada === "Category"){
                 this.elementos = filtroTexto
             }else {
