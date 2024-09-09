@@ -14,7 +14,6 @@
         width: 220px;
         height: 280px;
         box-shadow: 1px 12px 15px;
-        
         transition: 500ms;
 
         &:hover{
