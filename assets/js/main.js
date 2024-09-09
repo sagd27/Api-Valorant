@@ -8,8 +8,6 @@ const app = createApp({
   data() {
     return {
       agentes: [],
-      imgAgentes: [],
-      imgAgentes1: [],
       armas: [],
       imgArmas: [],
       mapas: [],
