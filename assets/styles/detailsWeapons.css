@@ -1,0 +1,17 @@
+.contenedorArma {
+  background-image: url("../media/bg-weapons.jpg");
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 10px 10px 15px black;
+  & img {
+    filter: drop-shadow(6px 10px 6px black);
+  }
+}
+.skinB {
+  transition: 300ms;
+  &:hover {
+    scale: 1.13;
+    filter: drop-shadow(11px 13px 11px black);
+  }
+}
