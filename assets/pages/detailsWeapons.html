@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/weapons.css">
   </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
@@ -63,7 +64,28 @@
           </div>
         </nav>
       </header>
-      <main class="flex-grow-1 bg-image"></main>
+      <main id="appWeaponsDetails" class="flex-grow-1 bg-image">
+
+        <div class="card bg-dark text-white mx-auto mt-5 customCard">
+          <img :src="weapon.displayIcon" class="card-img customImg" :alt="weapon.displayIcon">
+          <div class="card-img-overlay align-self-center">
+            <h1 class="card-title">{{weapon.displayName}}</h1>
+            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+            <p class="card-text">Category: {{weapon.category.split('::')[1]}}</p>
+          </div>
+        </div>
+
+        <div class="col-12 d-flex  p-4 gap-3 flex-wrap  justify-content-center align-items-center">
+          <div v-for="weapon in callouts" class="card" style="width: 18rem;">
+            <img :src="weapon.displayIcon" class="card-img-top" alt="weapon.displayIcon">
+            <div class="card-body">
+              <p class="card-text">{{weapon.displayName}}</p>
+              <!-- <p class="card-text">{{weapon.displayName}}</p> -->
+            </div>
+          </div>
+        </div>
+
+      </main>
       <footer
         class="footer bg-rojoPrincipal d-flex flex-column justify-content-between"
       >
@@ -92,11 +114,14 @@
         </div>
 
       </footer>
-    </div>
+    </div> 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/weaponsDetails.js" type="module"></script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </body>
 </html>

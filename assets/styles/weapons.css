@@ -96,6 +96,16 @@
   backdrop-filter: blur(8px);
 }
 
+/* Pagina de weaponsDetails */
+.customCard{
+  width: 700px;
+  border-radius: 10px;
+  max-height: 200px;
+}
+/* .customImg{
+  max-height: 180px ;
+} */
+
 @media (max-width: 575px) {
   .custom-filtradoresWeapons {
     flex-direction: column-reverse; /* Invierte el orden en pantallas pequeñas */
