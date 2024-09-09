@@ -14,8 +14,8 @@
   margin: 3rem 0;
   border-radius: 10px;
   transition: 500ms;
-  width: 230px;
-  height: 150px;
+  width: 320px;
+  height: 140px;
 
   &:hover .customImgWeapons {
     opacity: 0;
@@ -61,7 +61,8 @@
 .customImgWeapons-hover {
   z-index: 3;
   opacity: 0;
-  translate: 70px -10px;
+  /* translate: 30px -30px; */
+  top: 25px;
   transition: opacity 0.3s ease;
   transition: 500ms;
 }
@@ -89,22 +90,13 @@
   }
 }
 .contenedor {
-  gap: 200px;
+  column-gap: 80px;
+  row-gap: 0px;
 }
 .fondoTransparante {
   background-color: #ff465657;
   backdrop-filter: blur(8px);
 }
-
-/* Pagina de weaponsDetails */
-.customCard{
-  width: 700px;
-  border-radius: 10px;
-  max-height: 200px;
-}
-/* .customImg{
-  max-height: 180px ;
-} */
 
 @media (max-width: 575px) {
   .custom-filtradoresWeapons {
