@@ -127,6 +127,14 @@
                   </div>
               </td>
           </tr>
+          <thead>
+            <tr class="align-middle text-center font-valorant">
+              <th scope="col" class="col-3">Weapon with least fire rate</th>
+              <th scope="col" class="col-2">Fire rate</th>
+              <th scope="col" class="col-3">Weapon Category</th>
+              <th scope="col" class="col-4">Image</th>
+            </tr>
+          </thead>
           <tr class="align-middle text-center" v-if="minFireRate && minFireRate.displayName && minFireRate.weaponStats">
               <td class="font-valorant">{{ minFireRate.displayName }}</td>
               <td>{{ minFireRate.weaponStats.fireRate }}</td>
