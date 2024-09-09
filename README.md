@@ -5,9 +5,13 @@ Para su desarrollo, utilizamos datos obtenidos a través de la API Valorant. El 
 
 Diseño de mockup en figma: https://www.figma.com/design/fHbBMUYbup0xjNm4HYGL7p/api-valorant?node-id=0-1&node-type=CANVAS&t=MmGG2j1nPMzHimNX-0
 
+Deploy: https://sagd27.github.io/Api-Valorant/
+
 Grupo 4 Api Valorant:
 Jorge Lorduy
 Juan Bocanegra Escobar
 Samuel Guanchez Damas
 Estefany Montilva
 Miguel Caicedo
+
+
