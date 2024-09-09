@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/stats.css" />
   </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
@@ -42,7 +43,7 @@
               /></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav textNav">
+              <ul class="navbar-nav textNav ">
                 <li class="nav-item">
                   <a class="nav-link" href="../../index.html">Home</a>
                 </li>
@@ -63,7 +64,104 @@
           </div>
         </nav>
       </header>
-      <main class="flex-grow-1 bg-image"></main>
+      <main id="app" class="flex-grow-1 bg-image p-3">
+        <table class="table table-dark table-striped-columns">
+          <thead>
+            <tr class="align-middle text-center font-valorant">
+              <th scope="col" class="col-3">Map with most callouts</th>
+              <th scope="col" class="col-2">Number of callouts</th>
+              <th scope="col" class="col-4">Image</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="align-middle text-center" v-if="maxCalloutMap && maxCalloutMap.displayName">
+              <td class="font-valorant">{{ maxCalloutMap.displayName }}</td>
+              <td>{{ maxCalloutMap.callouts.length }}</td>
+              <td>
+                <div class ="img-stats"> 
+                  <img class ="img-fluid" :src="maxCalloutMap.splash" alt="Map image" />
+                </div>
+              </td>
+            </tr>
+
+            <thead>
+              <tr class="align-middle text-center font-valorant">
+                <th scope="col" class="col-4">Maps with least callouts</th>
+                <th scope="col" class="col-4">Number of callouts</th>
+                <th scope="col" class="col-4">Image</th>
+              </tr>
+            </thead>
+
+            <tr class="align-middle text-center" v-if="minCalloutMap && minCalloutMap.displayName">
+              <td class="font-valorant">{{ minCalloutMap.displayName }}</td>
+              <td>{{ minCalloutMap.callouts.length }}</td>
+              <td>
+                <div class ="img-stats"> 
+                  <img class ="img-fluid" :src="minCalloutMap.splash" alt="Map image" />
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <table class="table table-responsive table-dark table-striped-columns">
+
+          <thead>
+            <tr class="align-middle text-center font-valorant">
+              <th scope="col" class="col-3">Weapon with most fire rate</th>
+              <th scope="col" class="col-2">Fire rate</th>
+              <th scope="col" class="col-3">Weapon Category</th>
+              <th scope="col" class="col-4">Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-middle text-center" v-if="maxFireRate && maxFireRate.displayName && maxFireRate.weaponStats">
+              <td class="font-valorant">{{ maxFireRate.displayName }}</td>
+              <td>{{ maxFireRate.weaponStats.fireRate }}</td>
+              <td>{{ maxFireRate.shopData.category }}</td>
+              <td class="p-0">
+                  <div class="d-flex justify-content-center align-items-center w-100 p-1">
+                      <img class="img-fluid" :src="maxFireRate.displayIcon" alt="Weapon image" />
+                  </div>
+              </td>
+          </tr>
+          <tr class="align-middle text-center" v-if="minFireRate && minFireRate.displayName && minFireRate.weaponStats">
+              <td class="font-valorant">{{ minFireRate.displayName }}</td>
+              <td>{{ minFireRate.weaponStats.fireRate }}</td>
+              <td>{{ minFireRate.shopData.category }}</td>
+              <td class="p-0">
+                  <div class="d-flex justify-content-center align-items-center w-100 p-1">
+                      <img class="img-fluid" :src="minFireRate.displayIcon" alt="Weapon image" />
+                  </div>
+              </td>
+          </tr>
+  
+              </tbody>
+        </table>
+
+        <table class="table table-dark table-striped-columns">
+          <thead>
+            <tr class="align-middle text-center font-valorant">
+              <th scope="col" class="col-4">Role</th>
+              <th scope="col" class="col-4">Percentage of agents</th>
+              <th scope="col" class="col-4">Role's image</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="align-middle text-center" v-for="roleData in rolesArray" :key="roleData.role">
+              <td class="font-valorant">{{ roleData.role }}</td>
+              <td>{{ roleData.percentage }}%</td>
+              <td  v-if="roleData.agents[0] && roleData.agents[0].role.displayIcon">
+                <img class="img-fluid" :src="roleData.agents[0].role.displayIcon" alt="Role image" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </main>
       <footer
         class="footer bg-rojoPrincipal d-flex flex-column justify-content-between"
       >
@@ -97,5 +195,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../js/stats.js"></script>
   </body>
 </html>

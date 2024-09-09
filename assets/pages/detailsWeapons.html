@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/weapons.css">
+    <link rel="stylesheet" href="../styles/detailsWeapons.css" />
   </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
@@ -64,27 +64,79 @@
           </div>
         </nav>
       </header>
-      <main id="appWeaponsDetails" class="flex-grow-1 bg-image">
+      <main class="flex-grow-1 bg-image" id="app">
+        <div
+          class="contenedorGeneral col-12 d-flex align-items-center p-5 flex-column"
+        >
+          <div
+            class="contenedorArma col-12 col-md-8 rounded-4 d-flex align-items-center flex-column p-4"
+          >
+            <p class="font-valorant fw-bold fs-1 text-light">
+              Category: {{weapon.category ?
+              weapon.category.replace('EEquippableCategory::','') : ""}} -
+              {{weapon.displayName}}
+            </p>
 
-        <div class="card bg-dark text-white mx-auto mt-5 customCard">
-          <img :src="weapon.displayIcon" class="card-img customImg" :alt="weapon.displayIcon">
-          <div class="card-img-overlay align-self-center">
-            <h1 class="card-title">{{weapon.displayName}}</h1>
-            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-            <p class="card-text">Category: {{weapon.category.split('::')[1]}}</p>
-          </div>
-        </div>
-
-        <div class="col-12 d-flex  p-4 gap-3 flex-wrap  justify-content-center align-items-center">
-          <div v-for="weapon in callouts" class="card" style="width: 18rem;">
-            <img :src="weapon.displayIcon" class="card-img-top" alt="weapon.displayIcon">
-            <div class="card-body">
-              <p class="card-text">{{weapon.displayName}}</p>
-              <!-- <p class="card-text">{{weapon.displayName}}</p> -->
+            <img class="col-12 col-md-8" :src="weapon.displayIcon" alt="" />
+            <div class="col-12 d-flex justify-content-center">
+              <div
+                v-if="damageStats != false"
+                class="col-10 col-md-6 d-flex flex-wrap py-5"
+              >
+                <div class="col-12">
+                  <p class="font-valorant fw-bold fs-3 text-light pt-5">
+                    Damage Stats
+                  </p>
+                </div>
+                <div
+                  class="textodmg col-4 d-flex flex-column justify-content-between align-items-end text-light fs-5 fw-bold"
+                >
+                  <p>
+                    Head:
+                    <span class="font-valorant fs-4 fw-bold rojoPrincipal"
+                      >{{damageStats.headDamage}}</span
+                    >
+                  </p>
+                  <p>
+                    Body:
+                    <span class="font-valorant fs-4 fw-bold rojoPrincipal"
+                      >{{damageStats.bodyDamage}}</span
+                    >
+                  </p>
+                  <p>
+                    Leg:
+                    <span class="font-valorant fs-4 fw-bold rojoPrincipal"
+                      >{{damageStats.legDamage}}</span
+                    >
+                  </p>
+                </div>
+                <div class="hitmaker col-6 col-md-4">
+                  <img class="col-12" src="../media/bg-dummie.webp" alt="" />
+                </div>
+              </div>
+            </div>
+            <p
+              v-if="skins != false"
+              class="font-valorant fw-bold fs-2 text-light pt-5"
+            >
+              Skins
+            </p>
+            <div
+              class="contenedorSkins d-flex flex-wrap gap-2 col-12 justify-content-around"
+            >
+              <div class="col-12 col-md-4 py-5" v-for="skin in skins">
+                <p class="font-valorant col-10 fw-bold fs-4 text-light">
+                  {{skin.displayName}}
+                </p>
+                <img
+                  class="col-10 skinB"
+                  :src="skin.displayIcon ? skin.displayIcon : weapon.displayIcon"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
-
       </main>
       <footer
         class="footer bg-rojoPrincipal d-flex flex-column justify-content-between"
@@ -95,24 +147,23 @@
         <div
           class="icontFoot d-flex justify-content-around text-decoration-none p-4 flex-wrap"
         >
-        <a href="https://github.com/sagd27" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>sagd27</p></a
-      ><a href="https://github.com/Boca117" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>Boca117</p></a
-      ><a href="https://github.com/estefanymontilva" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>estefanymontilva</p></a
-      ><a href="https://github.com/Jlorduyz" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>Jlorduyz</p></a
-      ><a href="https://github.com/TI-Angel" target="_blank"
-        ><img src="../media/gitIcon.png" alt="" />
-        <p>TI-Angel</p></a
-      >
+          <a href="https://github.com/sagd27" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>sagd27</p></a
+          ><a href="https://github.com/Boca117" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>Boca117</p></a
+          ><a href="https://github.com/estefanymontilva" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>estefanymontilva</p></a
+          ><a href="https://github.com/Jlorduyz" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>Jlorduyz</p></a
+          ><a href="https://github.com/TI-Angel" target="_blank"
+            ><img src="../media/gitIcon.png" alt="" />
+            <p>TI-Angel</p></a
+          >
         </div>
-
       </footer>
     </div> 
     <script
@@ -120,8 +171,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/weaponsDetails.js" type="module"></script>
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../js/detailsWeapons.js"></script>
   </body>
 </html>
