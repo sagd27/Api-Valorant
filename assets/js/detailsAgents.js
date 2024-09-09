@@ -6,7 +6,8 @@ const app = createApp({
     data() {
         return {
             agents: null,
-            popoverIndex: null
+            popoverIndex: null,
+            popoverDescription: null
         }
     },
     created() {
@@ -30,11 +31,14 @@ const app = createApp({
     methods: {
         showPopover(index, description) {
             this.popoverIndex = index;
+            this.popoverDescription = description || '';
         },
-        hidePopover() {
-            this.popoverIndex = null;
+        hidePopover(index) {
+            if (this.popoverIndex === index) {
+                this.popoverIndex = null;
+                this.popoverDescription = ''; 
+            }
         }
-    
     },
     computed: {
         
