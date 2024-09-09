@@ -69,7 +69,6 @@ const app = createApp({
                         this.maps = filterText;
             
                         
-                       
                          this.maps = filterText.filter(maps => this.regionSelection >= maps.callouts.length)
                         
                 },
