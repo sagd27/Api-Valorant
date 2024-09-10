@@ -78,7 +78,7 @@
                         <li v-for="(ability, index) in agents.abilities" :key="index">
                           <div 
                             class="d-flex align-items-center gap-2" 
-                            @mouseover="showPopover(index, ability.description)" 
+                            @mouseover="showPopover(index, ability ? ability.description : '')" 
                             @mouseleave="hidePopover(index)">
                             <img class="iconAbilities " :src="ability.displayIcon" :alt="ability.displayName"> 
                               <p class="d-flex align-self-center m-0 font-valorant">{{ability.displayName}}</p>
