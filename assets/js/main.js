@@ -38,8 +38,7 @@ const app = createApp({
         .then((response) => response.json())
         .then((res) => {
           this.armas = res.data;
-          this.armas.splice(6);
-
+          this.armas.splice(4);
         });
     },
 
@@ -49,7 +48,6 @@ const app = createApp({
         .then((res) => {
           this.mapas = res.data;
           this.mapas.splice(3);
-       
         });
     },
   },

@@ -69,7 +69,7 @@
         </nav>
       </header>
 
-      <main id="app" class="backgroundIndex bg-image flex-grow-1">
+      <main id="app" class="backgroundIndex bg-image flex-grow-13">
         <div class="cover col-12">
           <img
             class="col-12"
@@ -93,45 +93,51 @@
           <h1 class="font-valorant text-center">The Agents</h1>
         </a>
 
-        <a class="text-decoration-none" href="./assets/pages/agents.html"><div class="contenedorAgentes w-100 col-12 d-flex flex-wrap ">
-          <img src="./assets/media/iniciador.png" alt="" />
-          <p>Initiator</p>
-          <img src="./assets/media/duelista.png" alt="" />
-          <p>Duelist</p>
-          <img src="./assets/media/controlador.png" alt="" />
-          <p>Controller</p>
-          <img src="./assets/media/centinela.png" alt="" />
-          <p>Sentinel</p>
-        </div></a>
+        <a class="text-decoration-none" href="./assets/pages/agents.html"
+          ><div class="contenedorAgentes w-100 col-12 d-flex flex-wrap">
+            <img src="./assets/media/iniciador.png" alt="" />
+            <p>Initiator</p>
+            <img src="./assets/media/duelista.png" alt="" />
+            <p>Duelist</p>
+            <img src="./assets/media/controlador.png" alt="" />
+            <p>Controller</p>
+            <img src="./assets/media/centinela.png" alt="" />
+            <p>Sentinel</p>
+          </div></a
+        >
 
         <a class="btn btnEM" href="assets/pages/weapons.html">
           <h1 class="font-valorant text-center">CHOOSE YOUR WEAPONES</h1>
           <h2 class="text-center">Creativity is your best weapon.</h2>
         </a>
 
-        <a href="./assets/pages/weapons.html"><div class="d-flex justify-content-center col-12 text-decoration-none">
-          <div
-            class="contenedorArmas d-flex align-items-center flex-wrap justify-content-around gap-5"
+        <a href="./assets/pages/weapons.html"
+          ><div
+            class="d-flex justify-content-center col-12 text-decoration-none"
           >
-            <div class="armas gap-5" v-for="arma in armas" id="arma">
-              <img class="card-img-top" :src="arma.displayIcon" alt="" />
-            </div>
-          </div>
-        </div></a>
+            <div
+              class="contenedorArmas d-flex align-items-center flex-wrap justify-content-center gap-5 col-12 p-5"
+            >
+              <div class="armas gap-5" v-for="arma in armas" id="arma">
+                <img class="card-img-top" :src="arma.displayIcon" alt="" />
+              </div>
+            </div></div
+        ></a>
 
         <a class="btn btnEM" href="assets/pages/maps.html">
           <h1 class="font-valorant text-center">Your Maps</h1>
           <h2 class="text-center">Fight around the world</h2>
         </a>
 
-        <a href="./assets/pages/maps.html"><div
-          id="maps"
-          class="contMapa col-12 flex-wrap justify-content-center d-flex pb-5 "
-        >
-          <div class="mapaDiv d-flex" v-for="mapasA in mapas">
-            <img class="mapaB" :src="mapasA.listViewIconTall" alt="" />
-          </div>
-        </div></a>
+        <a href="./assets/pages/maps.html"
+          ><div
+            id="maps"
+            class="contMapa col-12 flex-wrap justify-content-center d-flex pb-5"
+          >
+            <div class="mapaDiv d-flex" v-for="mapasA in mapas">
+              <img class="mapaB" :src="mapasA.listViewIconTall" alt="" />
+            </div></div
+        ></a>
       </main>
       <footer
         class="footer bg-rojoPrincipal d-flex flex-column justify-content-between"
