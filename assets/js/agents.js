@@ -60,6 +60,9 @@ const app = createApp({
       localStorage.setItem("agentesFavoritos", JSON.stringify(""));
       this.agentesFavoritos = [];
     },
+    buscarFav(agente) {
+      this.agentesFavoritos.find((fav) => fav == agente);
+    },
   },
   computed: {
     filtros() {
