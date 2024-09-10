@@ -62,7 +62,8 @@ transition: 500ms;
 .btn-fav svg{
         height: 40px;
         width: 50px;
-        translate: 170px 290px
+        translate: 170px 290px;
+        color: #ffffff93;
 
 }
 .fondoTransparante {

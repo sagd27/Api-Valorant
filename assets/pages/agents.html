@@ -212,7 +212,7 @@
               <button
                 @click="agregarFavorito(agente)"
                 class="btn btnGuardar mt-auto"
-                v-if="!agentesFavoritos.includes(agente)"
+                v-if="!agentesFavoritos.find(agent => agente.displayName == agent.displayName)"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -231,7 +231,7 @@
                 </svg>
               </button>
               <button
-                v-if="agentesFavoritos.includes(agente)"
+                v-else 
                 @click="eliminarFavorito(agente)"
                 class="btn btnGuardar mt-auto"
               >

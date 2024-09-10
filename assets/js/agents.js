@@ -14,11 +14,12 @@ const app = createApp({
     };
   },
   created() {
-    this.traerData(urlValo);
-    let localData = JSON.parse(localStorage.getItem("agentesFavoritos"));
+    const localData = JSON.parse(localStorage.getItem("agentesFavoritos"));
     if (localData) {
-      this.agentesFavoritos = localData;
+      this.agentesFavoritos = localData ;
     }
+    this.traerData(urlValo);
+    
   },
   methods: {
     traerData(url) {
@@ -33,6 +34,7 @@ const app = createApp({
           this.roles = this.roles = Array.from(
             new Set(this.agentes.map((res) => res.role.displayName))
           );
+          
         });
     },
     agregarFavorito(agente) {

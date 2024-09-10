@@ -213,7 +213,7 @@
                 <div class="position-absolute fondoArma">
                   <h4 class="nombreArma">{{elemento.displayName}}</h4>
                   <button
-                    v-if="!elementosFavoritos.includes(elemento)"
+                  v-if="!elementosFavoritos.find(elem => elemento.displayName == elem.displayName)"
                     @click="agregarFavorito(elemento)"
                     class="custombtn btn btn-danger position-absolute"
                   >
@@ -234,7 +234,7 @@
                     </svg>
                   </button>
                   <button
-                    v-if="elementosFavoritos.includes(elemento)"
+                    v-else
                     @click="agregarFavorito(elemento)"
                     class="custombtn btn btn-danger position-absolute"
                   >

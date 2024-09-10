@@ -211,9 +211,8 @@
             <div class="btn-fav position-absolute">
               <button
                 @click="agregarFavorito(map)"
-                class="btn"
-                v-if="!mapsFavorites.includes(map)"
-              >
+                class="btn btnGuardar mt-auto"
+                v-if="!mapsFavorites.find(mapfav => map.displayName == mapfav.displayName)" >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -231,9 +230,9 @@
                 </svg>
               </button>
               <button
-                @click="agregarFavorito(map)"
-                class="btn"
-                v-if="mapsFavorites.includes(map)"
+               v-else 
+                @click="eliminarFavorito(map)"
+                class="btn btnGuardar mt-auto"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
