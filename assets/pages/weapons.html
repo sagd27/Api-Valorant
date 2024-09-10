@@ -162,7 +162,8 @@
                 class="form-select"
                 aria-label="Default select example"
               >
-                <option class="font-valorant">Category</option>
+                <option class="font-valorant" hidden>Category</option>
+                <option class="font-valorant">ALL</option>
                 <option
                   v-for="categoria in categorias"
                   :value="categoria"
@@ -186,7 +187,7 @@
           </div>
         </div>
         <div>
-          <div class="contenedor d-flex flex-wrap p-5 justify-content-center">
+          <div class="contenedor contenedorWeapons d-flex flex-wrap p-5 justify-content-center">
             <div
               v-if="elementos.length == 0"
               class="mensajeAmigable d-block text-center"
