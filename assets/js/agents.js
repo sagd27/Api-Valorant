@@ -43,6 +43,7 @@ const app = createApp({
           JSON.stringify(this.agentesFavoritos)
         );
       }
+      alert(agente.displayName + " was saved successfully");
     },
     eliminarFavorito(agente) {
       let index = this.agentesFavoritos.findIndex(
@@ -59,9 +60,6 @@ const app = createApp({
     limpiarStorage() {
       localStorage.setItem("agentesFavoritos", JSON.stringify(""));
       this.agentesFavoritos = [];
-    },
-    buscarFav(agente) {
-      this.agentesFavoritos.find((fav) => fav == agente);
     },
   },
   computed: {
